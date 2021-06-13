@@ -28,12 +28,15 @@
   "private": true,
   "dependencies": {
     "@nrwl/next": "12.4.0",
+    "autoprefixer": "^10.2.6",
     "core-js": "^3.6.5",
     "document-register-element": "1.13.1",
     "next": "10.2.0",
+    "postcss": "^8.3.2",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "regenerator-runtime": "0.13.7",
+    "tailwindcss": "^2.1.4",
     "tslib": "^2.0.0"
   },
   "devDependencies": {
