@@ -19,6 +19,9 @@
     }
   },
   "projects": {
+    "markdown": {
+      "tags": []
+    },
     "site": {
       "tags": []
     },

@@ -18,6 +18,27 @@
     }
   },
   "projects": {
+    "markdown": {
+      "root": "libs/markdown",
+      "sourceRoot": "libs/markdown/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/markdown/**/*.ts"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/markdown"],
+          "options": {
+            "jestConfig": "libs/markdown/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
     "site": {
       "root": "apps/site",
       "sourceRoot": "apps/site",
