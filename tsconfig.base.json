@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@juridev/markdown": ["libs/markdown/src/index.ts"]
+      "@juridev/markdown": ["libs/markdown/src/index.ts"],
+      "@juridev/shared/mdx-elements": ["libs/shared/mdx-elements/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

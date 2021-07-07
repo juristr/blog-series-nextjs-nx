@@ -2,13 +2,14 @@ import { GetStaticPaths, GetStaticProps } from 'next';
 import { join } from 'path';
 import { ParsedUrlQuery } from 'querystring';
 import fs from 'fs';
-import styles from './articles.module.css';
 
 import {
   getParsedFileContentBySlug,
   renderMarkdown,
   MarkdownRenderingResult,
 } from '@juridev/markdown';
+import { MDXRemote } from 'next-mdx-remote';
+import { mdxElements } from '@juridev/shared/mdx-elements';
 
 interface ArticleProps extends ParsedUrlQuery {
   slug: string;
@@ -26,7 +27,7 @@ export function Article({ frontMatter, html }) {
         <div>by {frontMatter.author.name}</div>
         <hr />
 
-        <main dangerouslySetInnerHTML={{ __html: html }} />
+        <MDXRemote {...html} components={mdxElements} />
       </article>
     </div>
   );
@@ -58,7 +59,7 @@ export const getStaticPaths: GetStaticPaths<ArticleProps> = async () => {
   const paths = fs
     .readdirSync(POSTS_PATH)
     // Remove file extensions for page paths
-    .map((path) => path.replace(/\.md?$/, ''))
+    .map((path) => path.replace(/\.mdx?$/, ''))
     // Map the path into the static paths object required by Next.js
     .map((slug) => ({ params: { slug } }));
 
