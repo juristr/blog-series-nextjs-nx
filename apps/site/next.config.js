@@ -7,4 +7,10 @@ module.exports = withNx({
     // See: https://github.com/gregberge/svgr
     svgr: true,
   },
+
+  // just for demo purpose. The key is specified in the
+  // global `.env.local` file.
+  // env: {
+  //   articleMarkdownPath: '_articles',
+  // },
 });

@@ -15,8 +15,6 @@ interface ArticleProps extends ParsedUrlQuery {
   slug: string;
 }
 
-const POSTS_PATH = join(process.cwd(), '_articles');
-
 export function Article({ frontMatter, html }) {
   return (
     <div className="md:container md:mx-auto">
@@ -38,6 +36,8 @@ export const getStaticProps: GetStaticProps<MarkdownRenderingResult> = async ({
 }: {
   params: ArticleProps;
 }) => {
+  const POSTS_PATH = join(process.cwd(), process.env.articleMarkdownPath);
+
   // read markdown file into content and frontmatter
   const articleMarkdownContent = getParsedFileContentBySlug(
     params.slug,
@@ -56,6 +56,8 @@ export const getStaticProps: GetStaticProps<MarkdownRenderingResult> = async ({
 };
 
 export const getStaticPaths: GetStaticPaths<ArticleProps> = async () => {
+  const POSTS_PATH = join(process.cwd(), process.env.articleMarkdownPath);
+
   const paths = fs
     .readdirSync(POSTS_PATH)
     // Remove file extensions for page paths
