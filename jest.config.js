@@ -1,7 +1,3 @@
-module.exports = {
-  projects: [
-    '<rootDir>/apps/site',
-    '<rootDir>/libs/markdown',
-    '<rootDir>/libs/shared/mdx-elements',
-  ],
-};
+const { getJestProjects } = require('@nrwl/jest');
+
+module.exports = { projects: getJestProjects() };
