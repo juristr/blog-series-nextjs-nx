@@ -50,6 +50,7 @@
     "@babel/preset-typescript": "7.12.13",
     "@nrwl/cli": "12.6.2",
     "@nrwl/cypress": "12.6.2",
+    "@nrwl/devkit": "12.6.2",
     "@nrwl/eslint-plugin-nx": "12.6.2",
     "@nrwl/jest": "12.6.2",
     "@nrwl/linter": "12.6.2",
@@ -68,6 +69,7 @@
     "cypress": "^7.3.0",
     "dotenv": "8.2.0",
     "eslint": "7.22.0",
+    "eslint-config-next": "11.0.1",
     "eslint-config-prettier": "8.1.0",
     "eslint-plugin-cypress": "^2.10.3",
     "eslint-plugin-import": "2.22.1",
@@ -78,7 +80,6 @@
     "prettier": "2.3.2",
     "ts-jest": "26.5.5",
     "ts-node": "~9.1.1",
-    "typescript": "4.3.5",
-    "eslint-config-next": "11.0.1"
+    "typescript": "4.3.5"
   }
 }
