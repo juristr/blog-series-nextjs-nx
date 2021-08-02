@@ -19,7 +19,8 @@
     },
     "excerpt": {
       "type": "string",
-      "description": "An excerpt that summarizes the blog post in a single line"
+      "description": "An excerpt that summarizes the blog post in a single line",
+      "default": ""
     }
   },
   "required": ["title", "author"]
