@@ -13,7 +13,7 @@ export default {
 const Template: Story<TopicButtonProps> = (args) => {
   const [clickedTopic, setClickedTopic] = useState<string | null>(null);
   return (
-    <div className="bg-gray-50 p-20">
+    <div className="bg-gray-100 p-20">
       <TopicButton
         {...args}
         onClick={(topicName) => setClickedTopic(topicName)}
