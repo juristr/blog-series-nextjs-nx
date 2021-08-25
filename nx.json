@@ -5,7 +5,7 @@
       "devDependencies": "*"
     },
     ".eslintrc.json": "*",
-    "_articles": "*"
+    "_articles/*.mdx": "*"
   },
   "affected": {
     "defaultBase": "master"
