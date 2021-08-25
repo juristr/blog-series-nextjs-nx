@@ -4,7 +4,8 @@
       "dependencies": "*",
       "devDependencies": "*"
     },
-    ".eslintrc.json": "*"
+    ".eslintrc.json": "*",
+    "_articles": "*"
   },
   "affected": {
     "defaultBase": "master"
