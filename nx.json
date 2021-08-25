@@ -35,7 +35,8 @@
       "tags": []
     },
     "site": {
-      "tags": []
+      "tags": [],
+      "implicitDependencies": ["site-articles"]
     },
     "site-e2e": {
       "tags": [],
@@ -44,6 +45,9 @@
     "storybook-e2e-ui-e2e": {
       "tags": [],
       "implicitDependencies": ["shared-ui"]
+    },
+    "site-articles": {
+      "tags": []
     }
   },
   "targetDependencies": {
