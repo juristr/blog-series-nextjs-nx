@@ -16,6 +16,7 @@
     "baseUrl": ".",
     "paths": {
       "@juridev/markdown": ["libs/markdown/src/index.ts"],
+      "@juridev/reactui": ["libs/reactui/src/index.ts"],
       "@juridev/shared/mdx-elements": ["libs/shared/mdx-elements/src/index.ts"],
       "@juridev/shared/ui": ["libs/shared/ui/src/index.ts"]
     }
