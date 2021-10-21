@@ -9,7 +9,9 @@
   "overrides": [
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
-      "rules": {}
+      "rules": {
+        "@next/next/no-html-link-for-pages": ["error", "apps/site/pages"]
+      }
     },
     {
       "files": ["*.ts", "*.tsx"],
