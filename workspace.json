@@ -1,22 +1,5 @@
 {
   "version": 2,
-  "cli": {
-    "defaultCollection": "@nrwl/next"
-  },
-  "defaultProject": "site",
-  "generators": {
-    "@nrwl/react": {
-      "application": {
-        "babel": true
-      }
-    },
-    "@nrwl/next": {
-      "application": {
-        "style": "css",
-        "linter": "eslint"
-      }
-    }
-  },
   "projects": {
     "markdown": {
       "root": "libs/markdown",
@@ -26,18 +9,23 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/markdown/**/*.ts"]
+            "lintFilePatterns": [
+              "libs/markdown/**/*.ts"
+            ]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/markdown"],
+          "outputs": [
+            "coverage/libs/markdown"
+          ],
           "options": {
             "jestConfig": "libs/markdown/jest.config.js",
             "passWithNoTests": true
           }
         }
-      }
+      },
+      "tags": []
     },
     "shared-mdx-elements": {
       "root": "libs/shared/mdx-elements",
@@ -54,13 +42,16 @@
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/shared/mdx-elements"],
+          "outputs": [
+            "coverage/libs/shared/mdx-elements"
+          ],
           "options": {
             "jestConfig": "libs/shared/mdx-elements/jest.config.js",
             "passWithNoTests": true
           }
         }
-      }
+      },
+      "tags": []
     },
     "site": {
       "root": "apps/site",
@@ -69,7 +60,9 @@
       "targets": {
         "build": {
           "executor": "@nrwl/next:build",
-          "outputs": ["{options.outputPath}"],
+          "outputs": [
+            "{options.outputPath}"
+          ],
           "options": {
             "root": "apps/site",
             "outputPath": "dist/apps/site"
@@ -83,8 +76,8 @@
           "options": {
             "buildTarget": "site:build",
             "dev": true,
-            "customServerPath": "../../tools/next-watch-server/next-watch-server.ts",
-            "watchPath": "_articles"
+            "watchPath": "_articles",
+            "customServerPath": "../../tools/next-watch-server/next-watch-server.ts"
           },
           "configurations": {
             "production": {
@@ -101,7 +94,9 @@
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/site"],
+          "outputs": [
+            "coverage/apps/site"
+          ],
           "options": {
             "jestConfig": "apps/site/jest.config.js",
             "passWithNoTests": true
@@ -110,10 +105,16 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/site/**/*.{ts,tsx,js,jsx}"]
-          }
+            "lintFilePatterns": [
+              "apps/site/**/*.{ts,tsx,js,jsx}"
+            ]
+          },
+          "outputs": [
+            "{options.outputFile}"
+          ]
         }
-      }
+      },
+      "tags": []
     },
     "site-e2e": {
       "root": "apps/site-e2e",
@@ -136,10 +137,19 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/site-e2e/**/*.{js,ts}"]
-          }
+            "lintFilePatterns": [
+              "apps/site-e2e/**/*.{js,ts}"
+            ]
+          },
+          "outputs": [
+            "{options.outputFile}"
+          ]
         }
-      }
+      },
+      "tags": [],
+      "implicitDependencies": [
+        "site"
+      ]
     }
   }
 }

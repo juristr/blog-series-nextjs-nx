@@ -1,20 +1,36 @@
 {
   "migrations": [
     {
-      "version": "12.6.0-beta.0",
+      "version": "13.2.0",
+      "description": "Set --parallel=1 for existing repos to preserve the existing behavior",
       "cli": "nx",
-      "description": "Uses `getJestProjects()` to populate projects array in root level `jest.config.js` file.",
-      "factory": "./src/migrations/update-12-6-0/update-base-jest-config",
+      "implementation": "./src/migrations/update-13-2-0/set-parallel-default",
+      "package": "@nrwl/workspace",
+      "name": "set-parallel-default"
+    },
+    {
+      "version": "13.1.2-beta.0",
+      "cli": "nx",
+      "description": "Support .test. file names in tsconfigs",
+      "factory": "./src/migrations/update-13-1-2/update-tsconfigs-for-tests",
       "package": "@nrwl/jest",
-      "name": "update-jest-config-to-use-util"
+      "name": "update-ts-config-for-test-filenames"
     },
     {
       "cli": "nx",
-      "version": "12.6.0-beta.0",
-      "description": "Add 'next' eslint config",
-      "factory": "./src/migrations/update-12-6-0/add-next-eslint",
+      "version": "13.0.3-beta.1",
+      "description": "Fix setup for less stylesheets",
+      "factory": "./src/migrations/update-13-0-3/fix-less",
       "package": "@nrwl/next",
-      "name": "add-next-eslint-12.6.0"
+      "name": "fix-less"
+    },
+    {
+      "cli": "nx",
+      "version": "13.1.1-beta.1",
+      "description": "Enables SWC for Next.js apps.",
+      "factory": "./src/migrations/update-13-1-1/enable-swc",
+      "package": "@nrwl/next",
+      "name": "enable-swc"
     }
   ]
 }
