@@ -1,20 +1,12 @@
 {
   "migrations": [
     {
-      "version": "12.6.0-beta.0",
+      "version": "12.8.0-beta.11",
       "cli": "nx",
-      "description": "Uses `getJestProjects()` to populate projects array in root level `jest.config.js` file.",
-      "factory": "./src/migrations/update-12-6-0/update-base-jest-config",
-      "package": "@nrwl/jest",
-      "name": "update-jest-config-to-use-util"
-    },
-    {
-      "cli": "nx",
-      "version": "12.6.0-beta.0",
-      "description": "Add 'next' eslint config",
-      "factory": "./src/migrations/update-12-6-0/add-next-eslint",
-      "package": "@nrwl/next",
-      "name": "add-next-eslint-12.6.0"
+      "description": "Adjust Storybook tsconfig to add styled-jsx typings",
+      "factory": "./src/migrations/update-12-8-0/update-storybook-styled-jsx-typings",
+      "package": "@nrwl/storybook",
+      "name": "update-12-8.0"
     }
   ]
 }
