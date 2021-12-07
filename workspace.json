@@ -9,16 +9,12 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/markdown/**/*.ts"
-            ]
+            "lintFilePatterns": ["libs/markdown/**/*.ts"]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/markdown"
-          ],
+          "outputs": ["coverage/libs/markdown"],
           "options": {
             "jestConfig": "libs/markdown/jest.config.js",
             "passWithNoTests": true
@@ -42,9 +38,7 @@
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/shared/mdx-elements"
-          ],
+          "outputs": ["coverage/libs/shared/mdx-elements"],
           "options": {
             "jestConfig": "libs/shared/mdx-elements/jest.config.js",
             "passWithNoTests": true
@@ -60,9 +54,7 @@
       "targets": {
         "build": {
           "executor": "@nrwl/next:build",
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "options": {
             "root": "apps/site",
             "outputPath": "dist/apps/site"
@@ -94,9 +86,7 @@
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/site"
-          ],
+          "outputs": ["coverage/apps/site"],
           "options": {
             "jestConfig": "apps/site/jest.config.js",
             "passWithNoTests": true
@@ -105,13 +95,9 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/site/**/*.{ts,tsx,js,jsx}"
-            ]
+            "lintFilePatterns": ["apps/site/**/*.{ts,tsx,js,jsx}"]
           },
-          "outputs": [
-            "{options.outputFile}"
-          ]
+          "outputs": ["{options.outputFile}"]
         }
       },
       "tags": []
@@ -137,19 +123,13 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/site-e2e/**/*.{js,ts}"
-            ]
+            "lintFilePatterns": ["apps/site-e2e/**/*.{js,ts}"]
           },
-          "outputs": [
-            "{options.outputFile}"
-          ]
+          "outputs": ["{options.outputFile}"]
         }
       },
       "tags": [],
-      "implicitDependencies": [
-        "site"
-      ]
+      "implicitDependencies": ["site"]
     }
   }
 }
