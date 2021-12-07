@@ -25,32 +25,6 @@
       }
     }
   },
-  "projects": {
-    "markdown": {
-      "tags": []
-    },
-    "shared-mdx-elements": {
-      "tags": []
-    },
-    "site": {
-      "tags": []
-    },
-    "site-e2e": {
-      "tags": [],
-      "implicitDependencies": [
-        "site"
-      ]
-    },
-    "storybook-e2e-ui-e2e": {
-      "tags": [],
-      "implicitDependencies": [
-        "shared-ui"
-      ]
-    },
-    "shared-ui": {
-      "tags": []
-    }
-  },
   "targetDependencies": {
     "build": [
       {

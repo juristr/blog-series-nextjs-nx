@@ -1,36 +1,12 @@
 {
   "migrations": [
     {
-      "version": "13.2.0",
-      "description": "Set --parallel=1 for existing repos to preserve the existing behavior",
+      "version": "12.8.0-beta.11",
       "cli": "nx",
-      "implementation": "./src/migrations/update-13-2-0/set-parallel-default",
-      "package": "@nrwl/workspace",
-      "name": "set-parallel-default"
-    },
-    {
-      "version": "13.1.2-beta.0",
-      "cli": "nx",
-      "description": "Support .test. file names in tsconfigs",
-      "factory": "./src/migrations/update-13-1-2/update-tsconfigs-for-tests",
-      "package": "@nrwl/jest",
-      "name": "update-ts-config-for-test-filenames"
-    },
-    {
-      "cli": "nx",
-      "version": "13.0.3-beta.1",
-      "description": "Fix setup for less stylesheets",
-      "factory": "./src/migrations/update-13-0-3/fix-less",
-      "package": "@nrwl/next",
-      "name": "fix-less"
-    },
-    {
-      "cli": "nx",
-      "version": "13.1.1-beta.1",
-      "description": "Enables SWC for Next.js apps.",
-      "factory": "./src/migrations/update-13-1-1/enable-swc",
-      "package": "@nrwl/next",
-      "name": "enable-swc"
+      "description": "Adjust Storybook tsconfig to add styled-jsx typings",
+      "factory": "./src/migrations/update-12-8-0/update-storybook-styled-jsx-typings",
+      "package": "@nrwl/storybook",
+      "name": "update-12-8.0"
     }
   ]
 }
