@@ -1,22 +1,5 @@
 {
   "version": 2,
-  "cli": {
-    "defaultCollection": "@nrwl/next"
-  },
-  "defaultProject": "site",
-  "generators": {
-    "@nrwl/react": {
-      "application": {
-        "babel": true
-      }
-    },
-    "@nrwl/next": {
-      "application": {
-        "style": "css",
-        "linter": "eslint"
-      }
-    }
-  },
   "projects": {
     "markdown": {
       "root": "libs/markdown",
@@ -37,7 +20,8 @@
             "passWithNoTests": true
           }
         }
-      }
+      },
+      "tags": []
     },
     "shared-mdx-elements": {
       "root": "libs/shared/mdx-elements",
@@ -60,7 +44,8 @@
             "passWithNoTests": true
           }
         }
-      }
+      },
+      "tags": []
     },
     "shared-ui": {
       "root": "libs/shared/ui",
@@ -112,7 +97,8 @@
             }
           }
         }
-      }
+      },
+      "tags": []
     },
     "site": {
       "root": "apps/site",
@@ -163,9 +149,11 @@
           "executor": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": ["apps/site/**/*.{ts,tsx,js,jsx}"]
-          }
+          },
+          "outputs": ["{options.outputFile}"]
         }
-      }
+      },
+      "tags": []
     },
     "site-e2e": {
       "root": "apps/site-e2e",
@@ -189,9 +177,12 @@
           "executor": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": ["apps/site-e2e/**/*.{js,ts}"]
-          }
+          },
+          "outputs": ["{options.outputFile}"]
         }
-      }
+      },
+      "tags": [],
+      "implicitDependencies": ["site"]
     },
     "storybook-e2e-ui-e2e": {
       "root": "apps/storybook-e2e/ui-e2e",
@@ -217,7 +208,9 @@
             "lintFilePatterns": ["apps/storybook-e2e/ui-e2e/**/*.{js,ts}"]
           }
         }
-      }
+      },
+      "tags": [],
+      "implicitDependencies": ["shared-ui"]
     }
   }
 }

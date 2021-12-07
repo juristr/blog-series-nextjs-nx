@@ -20,30 +20,9 @@
           "test",
           "e2e",
           "build-storybook"
-        ]
+        ],
+        "parallel": 3
       }
-    }
-  },
-  "projects": {
-    "markdown": {
-      "tags": []
-    },
-    "shared-mdx-elements": {
-      "tags": []
-    },
-    "shared-ui": {
-      "tags": []
-    },
-    "site": {
-      "tags": []
-    },
-    "site-e2e": {
-      "tags": [],
-      "implicitDependencies": ["site"]
-    },
-    "storybook-e2e-ui-e2e": {
-      "tags": [],
-      "implicitDependencies": ["shared-ui"]
     }
   },
   "targetDependencies": {
@@ -53,5 +32,22 @@
         "projects": "dependencies"
       }
     ]
+  },
+  "generators": {
+    "@nrwl/react": {
+      "application": {
+        "babel": true
+      }
+    },
+    "@nrwl/next": {
+      "application": {
+        "style": "css",
+        "linter": "eslint"
+      }
+    }
+  },
+  "defaultProject": "site",
+  "cli": {
+    "defaultCollection": "@nrwl/next"
   }
 }
