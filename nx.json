@@ -25,50 +25,6 @@
       }
     }
   },
-  "projects": {
-    "markdown": {
-      "tags": []
-    },
-    "shared-mdx-elements": {
-      "tags": []
-    },
-    "shared-ui": {
-      "tags": []
-    },
-    "site": {
-      "tags": [],
-      "implicitDependencies": [
-        "site-articles"
-      ]
-    },
-    "site-e2e": {
-      "tags": [],
-      "implicitDependencies": [
-        "site"
-      ]
-    },
-    "storybook-e2e-ui-e2e": {
-      "tags": [],
-      "implicitDependencies": [
-        "shared-ui"
-      ]
-    },
-    "site-articles": {
-      "tags": []
-    },
-    "reactui": {
-      "tags": []
-    },
-    "react-app-e2e": {
-      "tags": [],
-      "implicitDependencies": [
-        "react-app"
-      ]
-    },
-    "react-app": {
-      "tags": []
-    }
-  },
   "targetDependencies": {
     "build": [
       {
