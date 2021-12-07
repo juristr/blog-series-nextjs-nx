@@ -9,18 +9,38 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
+            "lintFilePatterns": ["libs/markdown/**/*.ts"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/markdown"],
+          "options": {
+            "jestConfig": "libs/markdown/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "tags": []
+    },
+    "shared-mdx-elements": {
+      "root": "libs/shared/mdx-elements",
+      "sourceRoot": "libs/shared/mdx-elements/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
             "lintFilePatterns": [
-              "libs/markdown/**/*.ts"
+              "libs/shared/mdx-elements/**/*.{ts,tsx,js,jsx}"
             ]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/markdown"
-          ],
+          "outputs": ["coverage/libs/shared/mdx-elements"],
           "options": {
-            "jestConfig": "libs/markdown/jest.config.js",
+            "jestConfig": "libs/shared/mdx-elements/jest.config.js",
             "passWithNoTests": true
           }
         }
@@ -34,9 +54,7 @@
       "targets": {
         "build": {
           "executor": "@nrwl/next:build",
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "options": {
             "root": "apps/site",
             "outputPath": "dist/apps/site"
@@ -66,9 +84,7 @@
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/site"
-          ],
+          "outputs": ["coverage/apps/site"],
           "options": {
             "jestConfig": "apps/site/jest.config.js",
             "passWithNoTests": true
@@ -77,13 +93,9 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/site/**/*.{ts,tsx,js,jsx}"
-            ]
+            "lintFilePatterns": ["apps/site/**/*.{ts,tsx,js,jsx}"]
           },
-          "outputs": [
-            "{options.outputFile}"
-          ]
+          "outputs": ["{options.outputFile}"]
         }
       },
       "tags": []
@@ -109,44 +121,13 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/site-e2e/**/*.{js,ts}"
-            ]
+            "lintFilePatterns": ["apps/site-e2e/**/*.{js,ts}"]
           },
-          "outputs": [
-            "{options.outputFile}"
-          ]
+          "outputs": ["{options.outputFile}"]
         }
       },
       "tags": [],
-      "implicitDependencies": [
-        "site"
-      ]
-    },
-    "shared-mdx-elements": {
-      "root": "libs/shared/mdx-elements",
-      "sourceRoot": "libs/shared/mdx-elements/src",
-      "projectType": "library",
-      "targets": {
-        "lint": {
-          "executor": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/shared/mdx-elements/**/*.{ts,tsx,js,jsx}"
-            ]
-          }
-        },
-        "test": {
-          "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/shared/mdx-elements"
-          ],
-          "options": {
-            "jestConfig": "libs/shared/mdx-elements/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
+      "implicitDependencies": ["site"]
     }
   }
 }
