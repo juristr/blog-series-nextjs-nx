@@ -67,6 +67,37 @@
             "jestConfig": "libs/shared/ui/jest.config.js",
             "passWithNoTests": true
           }
+        },
+        "storybook": {
+          "executor": "@nrwl/storybook:storybook",
+          "options": {
+            "uiFramework": "@storybook/react",
+            "port": 4400,
+            "config": {
+              "configFolder": "libs/shared/ui/.storybook"
+            }
+          },
+          "configurations": {
+            "ci": {
+              "quiet": true
+            }
+          }
+        },
+        "build-storybook": {
+          "executor": "@nrwl/storybook:build",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "uiFramework": "@storybook/react",
+            "outputPath": "dist/storybook/shared-ui",
+            "config": {
+              "configFolder": "libs/shared/ui/.storybook"
+            }
+          },
+          "configurations": {
+            "ci": {
+              "quiet": true
+            }
+          }
         }
       }
     },
@@ -153,6 +184,34 @@
       },
       "tags": [],
       "implicitDependencies": ["site"]
+    },
+    "storybook-e2e-ui-e2e": {
+      "root": "apps/storybook-e2e/ui-e2e",
+      "sourceRoot": "apps/storybook-e2e/ui-e2e/src",
+      "projectType": "application",
+      "targets": {
+        "e2e": {
+          "executor": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/storybook-e2e/ui-e2e/cypress.json",
+            "devServerTarget": "shared-ui:storybook"
+          },
+          "configurations": {
+            "ci": {
+              "devServerTarget": "shared-ui:storybook:ci"
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["apps/storybook-e2e/ui-e2e/**/*.{js,ts}"]
+          }
+        }
+      },
+      "tags": [],
+      "implicitDependencies": ["shared-ui"]
     }
   }
 }
