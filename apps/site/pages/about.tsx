@@ -8,7 +8,7 @@ export interface AboutProps {
 export function About(props: AboutProps) {
   return (
     <div>
-      <h1>Welcome, {props.name}!</h1>
+      <h1>Welcome test, {props.name}!</h1>
     </div>
   );
 }
